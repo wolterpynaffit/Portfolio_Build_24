@@ -1,11 +1,14 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
 # members route
+
+
 @app.route('/members')
 def members():
-    return {'members': ['Member1', 'Member2', 'Member3']}
+    return jsonify({'members': ['Member1', 'Member2', 'Member3']}),200
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     app.run(debug=True)
